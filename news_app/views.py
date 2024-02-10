@@ -93,8 +93,14 @@ def blogauthorview(request):
     return render(request, 'news/blog-author.html')
 
 
-def blogcategory1view(request):
-    return render(request, 'news/blog-category-01.html')
+class BlogCategory1view(ListView):
+    model = News
+    template_name = 'news/blog-category-01.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['lifestylenews'] = News.published.all().order_by('-published_time').filter(category__name='LifeStyle')
+        return context
 
 
 def blogcategory2view(request):

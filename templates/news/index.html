@@ -91,7 +91,7 @@
                             {% for news in news_list %}
                                 <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{% url 'news_detail' news.slug %}" title="">
                                         <img src="{{ news.image.url }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -99,7 +99,7 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <h4><a href="single.html" title="">{{ news.title|truncatewords:6 }}</a></h4>
+                                    <h4><a href="{% url 'news_detail' news.slug %}" title="">{{ news.title|truncatewords:6 }}</a></h4>
                                     <small><a href="blog-category-01.html" title="">{{ news.category }}</a></small>
                                     <small><a href="blog-category-01.html" title="">{{ news.published_time }}</a></small>
                                 </div><!-- end meta -->
@@ -115,7 +115,7 @@
                             {% for news in news_list1 %}
                             	<div class="blog-box">
                                 <div class="post-media" >
-                                    <a href="{% url 'single' %}" title="">
+                                    <a href="{% url 'news_detail' news.slug %}" title="">
                                         <img src="{{ news.image.url }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
