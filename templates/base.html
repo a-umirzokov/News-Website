@@ -1,0 +1,621 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title -->
+    <title>{% block title %} {% endblock %}</title>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Site Metas -->
+    <title>Cloapedia - Stylish Magazine Blog Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    
+    <!-- Design fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet"> 
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+
+    <!-- Responsive styles for this template -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    <!-- Colors for this template -->
+    <link href="{% static 'css/colors.css' %}" rel="stylesheet">
+    
+    <!-- connect bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--[if lt IE 9]>
+{#      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>#}
+{#      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>#}
+    <![endif]-->
+    
+
+</head>
+<body>
+
+<!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="{% static 'images/loader.gif' %}" alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+        <div class="collapse top-search" id="collapseExample">
+            <div class="card card-block">
+                <div class="newsletter-widget text-center">
+                    <form class="form-inline">
+                        <input type="text" class="form-control" placeholder="What you are looking for?">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                    </form>
+                </div><!-- end newsletter -->
+            </div>
+        </div><!-- end top-search -->
+
+        <div class="topbar-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
+                        <div class="topsocial">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Flickr"><i class="fa fa-flickr"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
+                        </div><!-- end social -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4 hidden-md-down">
+                        <div class="topmenu text-center">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="{% url 'blog-category-01' %}"><i class="fa fa-star"></i> Trends</a></li>
+                                <li class="list-inline-item"><a href="{% url 'blog-category-02' %}"><i class="fa fa-bolt"></i> Hot Topics</a></li>
+                                <li class="list-inline-item"><a href="{% url 'page-contact' %}"><i class="fa fa-user-circle-o"></i> Write for us</a></li>
+                            </ul><!-- end ul -->
+                        </div><!-- end topmenu -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="topsearch text-right">
+                            <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-search"></i> Search</a>
+                        </div><!-- end search -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end header-logo -->
+        </div><!-- end topbar -->
+
+        <div class="header-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="logo">
+                            <a href="{% url 'home' %}"><img src="{% static 'upload/White Modern Simple Travel YouTube Banner (2) (2).png' %}" alt=""></a>
+                        </div><!-- end logo -->
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end header-logo -->
+        </div><!-- end header -->
+
+        <header class="header">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-toggleable-md">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cloapediamenu" aria-controls="cloapediamenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link color-pink-hover" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                                <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
+                                    <li>
+                                        <div class="mega-menu-content clearfix">
+                                            <div class="tab">
+                                                <button class="tablinks active" onclick="openCategory(event, 'cat01')">Lifestyle</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat02')">World News</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat03')">Travel</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat04')">Architecture</button>
+                                                <button class="tablinks" onclick="openCategory(event, 'cat05')">Recipes</button>
+                                            </div>
+
+                                            <div class="tab-details clearfix">
+                                                <div id="cat01" class="tabcontent active">
+                                                    <div class="row">
+                                                        {% for lifestyle_new in lifestyle_news %}
+                                                        	<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="{% url 'single' %}" title="">
+                                                                            <img src="{{ lifestyle_new.image.url }}" alt="" class="img-fluid">
+                                                                            <div class="hovereffect">
+                                                                            </div><!-- end hover -->
+                                                                            <span class="menucat" style="color: antiquewhite">News</span>
+                                                                        </a>
+                                                                    </div><!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4><a href="{% url 'single' %}" title="">{{ lifestyle_new.title|truncatewords:7 }}</a></h4>
+                                                                    </div><!-- end meta -->
+                                                                </div><!-- end blog-box -->
+                                                            </div>
+                                                        {% endfor %}
+                                                        
+                                                    </div><!-- end row -->
+                                                </div>
+                                                <div id="cat02" class="tabcontent">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_05.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Fashion</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">2017 summer stamp will have design models here</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_06.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Collections</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">Which color is the most suitable color for you?</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_07.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Fashion</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">Subscribe to these sites to keep an eye on the fashion</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_08.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Trends</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">The most trends of this year with color combination</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+                                                    </div><!-- end row -->
+                                                </div>
+                                                <div id="cat03" class="tabcontent">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_09.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Tourism</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">I visited the architects of Istanbul for you</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_11.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Travel</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">Prepared handmade dish dish in the Netherlands</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_12.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">City Tours</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">I recommend you visit the fairy chimneys</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_13.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Tourism</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">One of the most beautiful ports in the world</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+                                                    </div><!-- end row -->
+                                                </div>
+                                                <div id="cat04" class="tabcontent">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_14.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Places</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">A collection of the most beautiful shop designs</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_15.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Designs</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">America's and Canada's most beautiful wine houses</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_16.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Minimalism</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">The most professional ways to color your walls</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_17.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Furnishings</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">Stylish cabinet designs and furnitures</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+                                                    </div><!-- end row -->
+                                                </div>
+                                                <div id="cat05" class="tabcontent">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_18.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Vegetables</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">Grilled vegetable with fish prepared with fish</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_19.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Restaurants</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">The world's finest and clean meat restaurants</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_20.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Meat foods</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">Fried veal and vegetable dish</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="{% url 'single' %}" title="">
+                                                                        <img src="{% static 'upload/menu_21.jpg' %}" alt="" class="img-fluid">
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Pastas</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                                <div class="blog-meta">
+                                                                    <h4><a href="{% url 'single' %}" title="">Tasty pasta sauces and recipes</a></h4>
+                                                                </div><!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
+                                                    </div><!-- end row -->
+                                                </div>
+                                            </div><!-- end tab-details -->
+                                        </div><!-- end mega-menu-content -->
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown has-submenu">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                                    <li><a class="dropdown-item" href="{% url 'single' %}">Single Blog <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="{% url 'single' %}">Single Default</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'single-fullwidth' %}">Single Fullwidth</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'single-slider' %}">Single Gallery</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'single-video' %}">Single Video</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'single-audio' %}">Single Audio</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'single-no-media' %}">Single No Media</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{% url 'single' %}">Blog Category <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="{% url 'blog-category-01' %}">Blog Category A</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'blog-category-02' %}">Blog Category B</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'blog-category-03' %}">Blog Category C</a></li>
+                                            <li><a class="dropdown-item" href="blog-category-04.html">Blog Category D</a></li>
+                                            <li><a class="dropdown-item" href="blog-category-05.html">Blog Category E</a></li>
+                                            <li><a class="dropdown-item" href="blog-category-06.html">Blog Category F</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{% url 'blog-author' %}">Blog Author</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'page-contact' %}">Contact Page</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'page' %}">Default Page</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'page-fullwidth' %}">Fullwidth Page</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'page-404' %}">Not Found Page</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'page-sitemap' %}">Sitemap & Archives</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link color-pink-hover" href="{% url 'blog-category-01' %}">Fashion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link color-red-hover" href="{% url 'blog-category-02' %}">Food</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link color-aqua-hover" href="{% url 'blog-category-03' %}">Lifestyle</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link color-green-hover" href="blog-category-04.html">Travel</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link color-yellow-hover" href="blog-category-05.html"><i class="fa fa-play-circle-o"></i> Vlogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link color-grey-hover" href="blog-category-06.html">Health</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- end container -->
+        </header><!-- end header -->
+
+
+
+{% block content %}
+{% endblock content %}
+    
+    <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <h2 class="widget-title">Recent Posts</h2>
+                            <div class="blog-list-widget">
+                                <div class="list-group">
+                                    {% for latest_new in latest_news %}
+                                    	<a href="{% url 'single' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="w-100 justify-content-between">
+                                            <img src="{{ latest_new.image.url }}" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">{{ latest_new.title|truncatewords:7 }}</h5>
+                                            <small>{{ latest_new.published_time}}</small>
+                                        </div>
+                                        </a>
+                                    {% endfor %}
+                                    
+                                    
+                                    
+                                </div>
+                            </div><!-- end blog-list -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <h2 class="widget-title">Popular Posts</h2>
+                            <div class="blog-list-widget">
+                                <div class="list-group">
+                                    {% for latest_new in health_news %}
+                                        {% if forloop.counter > 1 %}
+                                            <a href="{% url 'single' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                <div class="w-100 justify-content-between">
+                                                    <img src="{{ latest_new.image.url }}" alt="" class="img-fluid float-left">
+                                                    <h5 class="mb-1">{{ latest_new.title|truncatewords:7 }}</h5>
+                                                    <span class="rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        {% endif %} 
+                                    {% endfor %}
+                                </div>
+                            </div><!-- end blog-list -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <h2 class="widget-title">Popular Categories</h2>
+                            <div class="link-widget">
+                                <ul>
+                                    <li><a href="#">Fashion <span>(21)</span></a></li>
+                                    <li><a href="#">Lifestyle <span>(15)</span></a></li>
+                                    <li><a href="#">Art & Design <span>(31)</span></a></li>
+                                    <li><a href="#">Health Beauty <span>(22)</span></a></li>
+                                    <li><a href="#">Clothing <span>(66)</span></a></li>
+                                    <li><a href="#">Entertaintment <span>(11)</span></a></li>
+                                    <li><a href="#">Food & Drink <span>(87)</span></a></li>
+                                </ul>
+                            </div><!-- end link-widget -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+
+                <hr class="invis1">
+
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="widget">
+                            <div class="footer-text text-center">
+                                <a href="{% url 'home' %}"><img src="{% static 'upload/Travel  Fashion  Lifestyle.png' %}" alt="" class="img-fluid"></a>
+                                <p>This website is a personal blog for handcrafted, cameramade photography content, fashion styles from independent creatives around the world.</p>
+                                <div class="social">
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                </div>
+
+                                <hr class="invis">
+
+                                <div class="newsletter-widget text-center">
+                                    <form class="form-inline">
+                                        <label>
+                                            <input type="email" class="form-control" placeholder="Enter your email address">
+                                        </label>
+                                        <button type="submit" class="btn btn-primary">Subscribe <i class="fa fa-envelope-open-o"></i></button>
+                                    </form>
+                                </div><!-- end newsletter -->
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <div class="copyright">&copy; Cloapedia. Design: <a href="http://html.design">HTML Design</a>.</div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+    </footer><!-- end footer -->
+        <div class="dmtop">Scroll to Top</div>
+        
+    </div><!-- end wrapper -->
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/tether.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

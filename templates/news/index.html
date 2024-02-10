@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+	Bosh Sahifa
+{% endblock %}
+{% block content %}
+    }
+    
+    <section class="section first-section">
+{#        <div class="container-fluid">#}
+{#            <div class="masonry-blog clearfix">#}
+{#                #}
+{#                <div class="left-side">#}
+{#                    <div class="masonry-box post-media">#}
+{#                        <img src="{% static 'upload/blog_masonry_01.jpg' %}" alt="" class="img-fluid">#}
+{#                        <div class="shadoweffect">#}
+{#                            <div class="shadow-desc">#}
+{#                                <div class="blog-meta">#}
+{#                                    <span class="bg-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></span>#}
+{#                                    <h4><a href="single.html" title="">The golden rules you need to know for a positive life</a></h4>#}
+{#                                    <small><a href="single.html" title="">24 July, 2017</a></small>#}
+{#                                    <small><a href="blog-author.html" title="">by Amanda</a></small>#}
+{#                                </div><!-- end meta -->#}
+{#                            </div><!-- end shadow-desc -->#}
+{#                        </div><!-- end shadow -->#}
+{#                    </div><!-- end post-media -->#}
+{#                </div><!-- end left-side -->#}
+{#                #}
+{#                <div class="left-side">#}
+{#                    <div class="masonry-box post-media">#}
+{#                        <img src="{% static 'upload/blog_masonry_01.jpg' %}" alt="" class="img-fluid">#}
+{#                        <div class="shadoweffect">#}
+{#                            <div class="shadow-desc">#}
+{#                                <div class="blog-meta">#}
+{#                                    <span class="bg-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></span>#}
+{#                                    <h4><a href="single.html" title="">The golden rules you need to know for a positive life</a></h4>#}
+{#                                    <small><a href="single.html" title="">24 July, 2017</a></small>#}
+{#                                    <small><a href="blog-author.html" title="">by Amanda</a></small>#}
+{#                                </div><!-- end meta -->#}
+{#                            </div><!-- end shadow-desc -->#}
+{#                        </div><!-- end shadow -->#}
+{#                    </div><!-- end post-media -->#}
+{#                </div><!-- end left-side -->#}
+{#                #}
+{#            </div><!-- end masonry -->#}
+{#        </div>#}
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <h3 class="color-aqua"><a href="blog-category-01.html" title="">Lifestyle Post and News</a></h3>
+                    </div><!-- end title -->
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            {% for news in lifestyle_news %}
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="single.html" title="">
+                                        <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta big-meta">
+                                    <h4><a href="single.html" title="">{{ news.title }}</a></h4>
+                                    <p>{{ news.body|truncatewords:10 }}</p>
+                                    <small><a href="blog-category-01.html" title="">{{ news.category }}</a></small>
+                                    <small><a href="single.html" title="">{{ news.published_time }}</a></small>
+                                    <small><a href="blog-author.html" title="">by Akbar</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            {% endfor %}
+
+                            <hr class="invis">
+                            
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end col -->
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <h3 class="color-pink"><a href="blog-category-01.html" title="">Yangiliklar</a></h3>
+                    </div><!-- end title -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            {% for news in news_list %}
+                                <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="single.html" title="">
+                                        <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta">
+                                    <h4><a href="single.html" title="">{{ news.title|truncatewords:6 }}</a></h4>
+                                    <small><a href="blog-category-01.html" title="">{{ news.category }}</a></small>
+                                    <small><a href="blog-category-01.html" title="">{{ news.published_time }}</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            <hr class="invis">
+                            	
+                            {% endfor %}
+                            
+                            
+                        </div><!-- end col -->
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            {% for news in news_list1 %}
+                            	<div class="blog-box">
+                                <div class="post-media" >
+                                    <a href="{% url 'single' %}" title="">
+                                        <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta">
+                                    <h4><a href="single.html" title="">{{ news.title|truncatewords:6 }}</a></h4>
+                                    <small><a href="{% url 'blog-category-01' %}" title="">{{ news.category }}</a></small>
+                                    <small><a href="{% url 'blog-category-01' %}" title="">{{ news.published_time }}</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            <hr class="invis">
+                            {% endfor %}
+
+
+
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="invis1">
+
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="banner-spot clearfix">
+                        <div class="banner-img">
+                            <img src="{% static 'upload/White Modern Simple Travel YouTube Banner (2) (2).png' %}" alt="" class="img-fluid">
+                        </div><!-- end banner-img -->
+                    </div><!-- end banner -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="invis1">
+
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="blog-list clearfix">
+                        <div class="section-title">
+                            <h3 class="color-green"><a href="blog-category-01.html" title="">Travel</a></h3>
+                        </div><!-- end title -->
+
+                        {% for news in travel_news %}
+
+                            <div class="blog-box row">
+                                <div class="col-md-4">
+                                    <div class="post-media">
+                                        <a href="single.html" title="">
+                                            <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                                            <div class="hovereffect"></div>
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="blog-meta big-meta col-md-8">
+                                    <h4><a href="single.html" title="">{{ news.title }}</a></h4>
+                                    <p>{{ news.body|truncatewords:15 }}</p>
+                                    <small><a href="blog-category-01.html" title="">{{ news.category }}</a></small>
+                                    <small><a href="single.html" title="">{{ news.published_time }}</a></small>
+                                    <small><a href="blog-author.html" title="">by Akbar</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+
+                            <hr class="invis">
+
+                        {% endfor %}
+
+                    </div><!-- end blog-list -->
+
+                    <hr class="invis">
+
+                    <div class="blog-list clearfix">
+                        <div class="section-title">
+                            <h3 class="color-red"><a href="blog-category-01.html" title="">Food</a></h3>
+                        </div><!-- end title -->
+
+                        {% for news in food_news %}
+
+                            <div class="blog-box row">
+                                <div class="col-md-4">
+                                    <div class="post-media">
+                                        <a href="single.html" title="">
+                                            <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                                            <div class="hovereffect"></div>
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="blog-meta big-meta col-md-8">
+                                    <h4><a href="single.html" title="">{{ news.title }}</a></h4>
+                                    <p>{{ news.body|truncatewords:15 }}</p>
+                                    <small><a href="blog-category-01.html" title="">{{ news.category }}</a></small>
+                                    <small><a href="single.html" title="">{{ news.published_time }}</a></small>
+                                    <small><a href="blog-author.html" title="">by Akbar</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+
+                            <hr class="invis">
+
+                        {% endfor %}
+                    </div><!-- end blog-list -->
+                </div><!-- end col -->
+
+                <div class="col-lg-3">
+                    <div class="section-title">
+                        <h3 class="color-yellow"><a href="blog-category-01.html" title="">Sport</a></h3>
+                    </div><!-- end title -->
+
+                    {% for news in sport_news %}
+
+                    <div class="blog-box">
+                        <div class="post-media">
+                            <a href="{% url 'single' %}" title="">
+                                <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                                <div class="hovereffect">
+                                    <span class="videohover"></span>
+                                </div><!-- end hover -->
+                            </a>
+                        </div><!-- end media -->
+                        <div class="blog-meta">
+                            <h4><a href="{% url 'single' %}" title="">{{ news.title|truncatewords:3 }}</a></h4>
+                            <small><a href="{% url 'blog-category-01' %}" title="">{{ news.category }}</a></small>
+                            <small><a href="{% url 'blog-category-01' %}" title="">{{ news.published_time }}</a></small>
+                        </div><!-- end meta -->
+                    </div><!-- end blog-box -->
+
+                    <hr class="invis">
+
+                    {% endfor %}
+
+                    <div class="section-title">
+                        <h3 class="color-grey"><a href="blog-category-01.html" title="">Health</a></h3>
+                    </div><!-- end title -->
+
+                    {% for news in health_news %}
+
+                    <div class="blog-box">
+                        <div class="post-media">
+                            <a href="{% url 'single' %}" title="">
+                                <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                                <div class="hovereffect">
+                                    <span class="videohover"></span>
+                                </div><!-- end hover -->
+                            </a>
+                        </div><!-- end media -->
+                        <div class="blog-meta">
+                            <h4><a href="{% url 'single' %}" title="">{{ news.title|truncatewords:3 }}</a></h4>
+                            <small><a href="{% url 'blog-category-01' %}" title="">{{ news.category }}</a></small>
+                            <small><a href="{% url 'blog-category-01' %}" title="">{{ news.published_time }}</a></small>
+                        </div><!-- end meta -->
+                    </div><!-- end blog-box -->
+
+
+                    {% endfor %}
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="invis1">
+
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="banner-spot clearfix">
+                        <div class="banner-img">
+                            <img src="{% static 'upload/White Modern Simple Travel YouTube Banner (2) (2).png' %}" alt="" class="img-fluid">
+                        </div><!-- end banner-img -->
+                    </div><!-- end banner -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+
+{% endblock %}

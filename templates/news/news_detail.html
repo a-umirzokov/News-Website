@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ blog.title }}</h2>
+    <p>at {{ blog.published_time }}</p>
+    <img src="{{ blog.image.url }}" alt="bu yerda rasm bor">
+    <p>{{ blog.body }}</p>
+{% endblock content %}
